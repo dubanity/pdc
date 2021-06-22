@@ -78,7 +78,6 @@ int main()
     initscr();
     raw();
     noecho();
-    //start_c();
 #pragma warning(disable:4244)
     WINDOW* displayWin = newwin(COLS / 1.04, ROWS / 1.04, 0, 0);
 #pragma warning(default:4244)
@@ -199,53 +198,6 @@ void qPrintAll(WINDOW* win)
             wrefresh(win);
         }
     }
-    /*mvwprintw(displayWin, DISPLAY_YBEGIN + 1, DISPLAY_XBEGIN + 1, ssMsg.str().c_str());
-    wrefresh(displayWin);*/
 }
 
 #endif
-
-//void clrscr()
-//{
-//	for (int i = 0; i < cols; i++)
-//	{
-//		for (int j = 0; j < rows; j++)
-//		{
-//			mvprintw(i, j, " ");
-//			refresh();
-//		}
-//	}
-//}
-//
-//void start_c()
-//{
-//	height = 10;
-//	width = 20;
-//	s_y = s_x = 10;
-//	WINDOW* win = newwin(height, width, s_y, s_x);
-//	refresh();
-//	box(win, 0, 0);
-//	while (true)
-//	{
-//		char uCharacter = getch();
-//		int uCharNum = uCharacter;
-//		if (uCharNum == 13)
-//		{
-//			break;
-//		}
-//		const char* oneConv = &uCharacter;
-//		std::stringstream twoConv;
-//		twoConv << oneConv[0];
-//		mvwprintw(win, cols - 1, idxChar, twoConv.str().c_str());
-//		wrefresh(win);
-//		ssMsg << oneConv[0];
-//		idxChar++;
-//	}
-//	clrscr();
-//	mvwprintw(win, 1, 1, ssMsg.str().c_str());
-//	wrefresh(win);
-//	ssMsg.str("");
-//	move(cols - 1, 0);
-//	idxChar = 0;
-//	start_c();
-//}
